@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #007a5e 0%, #ce1126 50%, #fcd116 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.quiz-wrapper {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 650px;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid #ce1126;
+}
+
+/* QUIZ PANELS */
+.quiz-panel {
+    display: none;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.quiz-panel.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* WELCOME PANEL */
+#welcome-panel h1 {
+    color: #007a5e;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#welcome-panel p {
+    color: #555;
+    margin-bottom: 2.5rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* CHALLENGE PANEL */
+.challenge-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+}
+
+#challenge-text {
+    color: #007a5e;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.challenge-stats {
+    display: flex;
+    justify-content: space-between;
+    color: #ce1126;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.options-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 2rem;
+}
+
+.option-card {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.2rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.option-card:hover {
+    background-color: #fcd116;
+    border-color: #ce1126;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(206, 17, 38, 0.2);
+}
+
+.option-card.correct {
+    background-color: #007a5e;
+    border-color: #005a46;
+    color: white;
+}
+
+.option-card.incorrect {
+    background-color: #ce1126;
+    border-color: #a50e1e;
+    color: white;
+}
+
+.tracker-container {
+    height: 12px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.tracker-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #007a5e 0%, #fcd116 100%);
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+/* OUTCOME PANEL */
+#outcome-panel h1 {
+    color: #ce1126;
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+}
+
+.outcome-summary {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2.5rem;
+    border: 2px solid #fcd116;
+}
+
+.outcome-summary p {
+    font-size: 1.4rem;
+    color: #007a5e;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+#performance-message {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ce1126;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: rgba(252, 209, 22, 0.1);
+}
+
+/* BUTTONS */
+button {
+    background: linear-gradient(135deg, #ce1126 0%, #a50e1e 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 8px rgba(206, 17, 38, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #007a5e 0%, #005a46 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 122, 94, 0.3);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 600px) {
+    .quiz-panel {
+        padding: 1.5rem;
+    }
+
+    #welcome-panel h1 {
+        font-size: 2rem;
+    }
+    
+    #challenge-text {
+        font-size: 1.3rem;
+    }
+
+    .option-card {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+
+    #outcome-panel h1 {
+        font-size: 2.2rem;
+    }
+
+    .outcome-summary p {
+        font-size: 1.2rem;
+    }
+
+    #performance-message {
+        font-size: 1.5rem;
+    }
+}

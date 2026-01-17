@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green-Red-Yellow Football Challenge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Welcome page-->
+    <div class="quiz-wrapper">
+      <div class="quiz-panel active" id="welcome-panel">
+        <h1>Lions Indomptables: Cameroon Football Legacy Quiz!</h1>
+        <p>How well do you know Cameroon Football? Test your knowledge</p>
+        <button id="launch-btn">Begin Challenge</button>
+      </div>
+      <!-- Challenge Page-->
+      <div class="quiz-panel" id="challenge-panel">
+        <div class="challenge-header">
+          <h2 id="challenge-text">Question appears here</h2>
+          <div class="challenge-stats">
+            <p>
+              Challenge <span id="active-challenge">1</span> of <span id="challenge-count">20</span>
+            </p>
+            <p>Points: <span id="points-tally">0</span></p>
+          </div>
+        </div>
+
+        <div id="options-box" class="options-box">
+          <!-- Options will be inserted here -->
+        </div>
+        <!--Tracker Bar-->
+        <div class="tracker-container">
+          <div id="tracker-bar" class="tracker-bar"></div>
+        </div>
+      </div>
+      <!-- Results Page-->
+      <div id="outcome-panel" class="quiz-panel">
+        <h1>Challenge Results</h1>
+        <div class="outcome-summary">
+          <p>You earned <span id="final-points">0</span> points out of <span id="maximum-points">5</span></p>
+          <div id="performance-message">Good effort!</div>
+        </div>
+        <button id="replay-btn">Try Again</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
